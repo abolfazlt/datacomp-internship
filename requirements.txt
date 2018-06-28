@@ -1,0 +1,5 @@
+ipython
+Django==2.0
+gunicorn==19.7.1
+numpy==1.13.3
+requests==2.18.4

@@ -1,0 +1,210 @@
+[2018-06-27 09:22:31 +0000] [10375] [INFO] Starting gunicorn 19.2.0
+[2018-06-27 09:22:31 +0000] [10375] [INFO] Listening at: http://0.0.0.0:8000 (10375)
+[2018-06-27 09:22:31 +0000] [10375] [INFO] Using worker: sync
+[2018-06-27 09:22:31 +0000] [10379] [INFO] Booting worker with pid: 10379
+[2018-06-27 09:22:31 +0000] [10381] [INFO] Booting worker with pid: 10381
+[2018-06-27 09:22:31 +0000] [10384] [INFO] Booting worker with pid: 10384
+[2018-06-27 09:22:31 +0000] [10388] [INFO] Booting worker with pid: 10388
+[2018-06-27 09:22:31 +0000] [10390] [INFO] Booting worker with pid: 10390
+[2018-06-27 09:22:31 +0000] [10393] [INFO] Booting worker with pid: 10393
+[2018-06-27 09:22:31 +0000] [10396] [INFO] Booting worker with pid: 10396
+[2018-06-27 09:22:32 +0000] [10399] [INFO] Booting worker with pid: 10399
+[2018-06-27 09:22:32 +0000] [10402] [INFO] Booting worker with pid: 10402
+[2018-06-27 09:22:32 +0000] [10405] [INFO] Booting worker with pid: 10405
+[2018-06-27 09:22:32 +0000] [10407] [INFO] Booting worker with pid: 10407
+[2018-06-27 09:22:32 +0000] [10408] [INFO] Booting worker with pid: 10408
+[2018-06-27 09:22:32 +0000] [10413] [INFO] Booting worker with pid: 10413
+[2018-06-27 09:22:32 +0000] [10415] [INFO] Booting worker with pid: 10415
+[2018-06-27 09:22:32 +0000] [10418] [INFO] Booting worker with pid: 10418
+[2018-06-27 09:22:32 +0000] [10422] [INFO] Booting worker with pid: 10422
+[2018-06-27 09:22:32 +0000] [10423] [INFO] Booting worker with pid: 10423
+[2018-06-27 09:22:32 +0000] [10426] [INFO] Booting worker with pid: 10426
+[2018-06-27 09:22:32 +0000] [10429] [INFO] Booting worker with pid: 10429
+[2018-06-27 09:22:32 +0000] [10431] [INFO] Booting worker with pid: 10431
+[2018-06-27 09:22:32 +0000] [10434] [INFO] Booting worker with pid: 10434
+[2018-06-27 09:22:32 +0000] [10436] [INFO] Booting worker with pid: 10436
+[2018-06-27 09:22:32 +0000] [10440] [INFO] Booting worker with pid: 10440
+[2018-06-27 09:22:32 +0000] [10442] [INFO] Booting worker with pid: 10442
+[2018-06-27 09:22:32 +0000] [10443] [INFO] Booting worker with pid: 10443
+[2018-06-27 09:22:33 +0000] [10445] [INFO] Booting worker with pid: 10445
+[2018-06-27 09:22:33 +0000] [10450] [INFO] Booting worker with pid: 10450
+[2018-06-27 09:22:33 +0000] [10453] [INFO] Booting worker with pid: 10453
+[2018-06-27 09:22:33 +0000] [10454] [INFO] Booting worker with pid: 10454
+[2018-06-27 09:22:33 +0000] [10457] [INFO] Booting worker with pid: 10457
+[2018-06-27 09:22:33 +0000] [10460] [INFO] Booting worker with pid: 10460
+[2018-06-27 09:22:33 +0000] [10463] [INFO] Booting worker with pid: 10463
+[2018-06-27 09:22:33 +0000] [10468] [INFO] Booting worker with pid: 10468
+[2018-06-27 09:23:48 +0000] [10598] [INFO] Starting gunicorn 19.2.0
+[2018-06-27 09:23:48 +0000] [10598] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2018-06-27 09:23:48 +0000] [10598] [ERROR] Retrying in 1 second.
+[2018-06-27 09:23:49 +0000] [10598] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2018-06-27 09:23:49 +0000] [10598] [ERROR] Retrying in 1 second.
+[2018-06-27 09:23:50 +0000] [10598] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2018-06-27 09:23:50 +0000] [10598] [ERROR] Retrying in 1 second.
+[2018-06-27 09:23:51 +0000] [10598] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2018-06-27 09:23:51 +0000] [10598] [ERROR] Retrying in 1 second.
+[2018-06-27 09:23:52 +0000] [10598] [ERROR] Connection in use: ('0.0.0.0', 8000)
+[2018-06-27 09:23:52 +0000] [10598] [ERROR] Retrying in 1 second.
+[2018-06-27 09:23:53 +0000] [10598] [ERROR] Can't connect to ('0.0.0.0', 8000)
+[2018-06-27 09:23:54 +0000] [10422] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 129, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 170, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/django/core/handlers/wsgi.py", line 189, in __call__
+    response = self.get_response(request)
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 209, in get_response
+    response = self.get_exception_response(request, resolver, 400)
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 90, in get_exception_response
+    response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 264, in handle_uncaught_exception
+    if resolver.urlconf_module is None:
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 395, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/kharmagas/anaconda2/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/kharmagas/SourceCode/datacomp-internship/datacomp/urls.py", line 3, in <module>
+    from django.urls import path, include, reverse
+ImportError: No module named urls
+[2018-06-27 09:23:54 +0000] [10436] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 129, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 170, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/django/core/handlers/wsgi.py", line 189, in __call__
+    response = self.get_response(request)
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 209, in get_response
+    response = self.get_exception_response(request, resolver, 400)
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 90, in get_exception_response
+    response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 264, in handle_uncaught_exception
+    if resolver.urlconf_module is None:
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 395, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/kharmagas/anaconda2/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/kharmagas/SourceCode/datacomp-internship/datacomp/urls.py", line 3, in <module>
+    from django.urls import path, include, reverse
+ImportError: No module named urls
+[2018-06-27 09:24:16 +0000] [10422] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 129, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 170, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/django/core/handlers/wsgi.py", line 189, in __call__
+    response = self.get_response(request)
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 209, in get_response
+    response = self.get_exception_response(request, resolver, 400)
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 90, in get_exception_response
+    response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 264, in handle_uncaught_exception
+    if resolver.urlconf_module is None:
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 395, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/kharmagas/anaconda2/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/kharmagas/SourceCode/datacomp-internship/datacomp/urls.py", line 3, in <module>
+    from django.urls import path, include, reverse
+ImportError: No module named urls
+[2018-06-27 09:24:16 +0000] [10436] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 129, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 170, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/django/core/handlers/wsgi.py", line 189, in __call__
+    response = self.get_response(request)
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 209, in get_response
+    response = self.get_exception_response(request, resolver, 400)
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 90, in get_exception_response
+    response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 264, in handle_uncaught_exception
+    if resolver.urlconf_module is None:
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 395, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/kharmagas/anaconda2/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/kharmagas/SourceCode/datacomp-internship/datacomp/urls.py", line 3, in <module>
+    from django.urls import path, include, reverse
+ImportError: No module named urls
+[2018-06-27 10:02:19 +0000] [13583] [INFO] Starting gunicorn 19.2.0
+[2018-06-27 10:02:19 +0000] [13583] [INFO] Listening at: http://0.0.0.0:8000 (13583)
+[2018-06-27 10:02:19 +0000] [13583] [INFO] Using worker: sync
+[2018-06-27 10:02:19 +0000] [13587] [INFO] Booting worker with pid: 13587
+[2018-06-27 10:02:19 +0000] [13589] [INFO] Booting worker with pid: 13589
+[2018-06-27 10:02:19 +0000] [13593] [INFO] Booting worker with pid: 13593
+[2018-06-27 10:02:19 +0000] [13594] [INFO] Booting worker with pid: 13594
+[2018-06-27 10:02:19 +0000] [13599] [INFO] Booting worker with pid: 13599
+[2018-06-27 10:02:19 +0000] [13601] [INFO] Booting worker with pid: 13601
+[2018-06-27 10:02:19 +0000] [13603] [INFO] Booting worker with pid: 13603
+[2018-06-27 10:02:19 +0000] [13607] [INFO] Booting worker with pid: 13607
+[2018-06-27 10:02:19 +0000] [13606] [INFO] Booting worker with pid: 13606
+[2018-06-27 10:02:20 +0000] [13610] [INFO] Booting worker with pid: 13610
+[2018-06-27 10:02:20 +0000] [13614] [INFO] Booting worker with pid: 13614
+[2018-06-27 10:02:20 +0000] [13617] [INFO] Booting worker with pid: 13617
+[2018-06-27 10:02:20 +0000] [13619] [INFO] Booting worker with pid: 13619
+[2018-06-27 10:02:20 +0000] [13623] [INFO] Booting worker with pid: 13623
+[2018-06-27 10:02:20 +0000] [13626] [INFO] Booting worker with pid: 13626
+[2018-06-27 10:02:20 +0000] [13629] [INFO] Booting worker with pid: 13629
+[2018-06-27 10:02:20 +0000] [13632] [INFO] Booting worker with pid: 13632
+[2018-06-27 10:02:20 +0000] [13634] [INFO] Booting worker with pid: 13634
+[2018-06-27 10:02:20 +0000] [13637] [INFO] Booting worker with pid: 13637
+[2018-06-27 10:02:20 +0000] [13638] [INFO] Booting worker with pid: 13638
+[2018-06-27 10:02:20 +0000] [13641] [INFO] Booting worker with pid: 13641
+[2018-06-27 10:02:20 +0000] [13644] [INFO] Booting worker with pid: 13644
+[2018-06-27 10:02:20 +0000] [13646] [INFO] Booting worker with pid: 13646
+[2018-06-27 10:02:20 +0000] [13648] [INFO] Booting worker with pid: 13648
+[2018-06-27 10:02:20 +0000] [13651] [INFO] Booting worker with pid: 13651
+[2018-06-27 10:02:20 +0000] [13653] [INFO] Booting worker with pid: 13653
+[2018-06-27 10:02:20 +0000] [13656] [INFO] Booting worker with pid: 13656
+[2018-06-27 10:02:20 +0000] [13655] [INFO] Booting worker with pid: 13655
+[2018-06-27 10:02:21 +0000] [13663] [INFO] Booting worker with pid: 13663
+[2018-06-27 10:02:21 +0000] [13665] [INFO] Booting worker with pid: 13665
+[2018-06-27 10:02:21 +0000] [13669] [INFO] Booting worker with pid: 13669
+[2018-06-27 10:02:21 +0000] [13671] [INFO] Booting worker with pid: 13671
+[2018-06-27 10:02:21 +0000] [13675] [INFO] Booting worker with pid: 13675
+[2018-06-27 10:02:23 +0000] [13601] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 129, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 170, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/django/core/handlers/wsgi.py", line 189, in __call__
+    response = self.get_response(request)
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 209, in get_response
+    response = self.get_exception_response(request, resolver, 400)
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 90, in get_exception_response
+    response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 264, in handle_uncaught_exception
+    if resolver.urlconf_module is None:
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 395, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/kharmagas/anaconda2/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/kharmagas/SourceCode/datacomp-internship/datacomp/urls.py", line 3, in <module>
+    from django.urls import path, include, reverse
+ImportError: No module named urls
+[2018-06-27 10:02:24 +0000] [13603] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 129, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/gunicorn/workers/sync.py", line 170, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/django/core/handlers/wsgi.py", line 189, in __call__
+    response = self.get_response(request)
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 209, in get_response
+    response = self.get_exception_response(request, resolver, 400)
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 90, in get_exception_response
+    response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/django/core/handlers/base.py", line 264, in handle_uncaught_exception
+    if resolver.urlconf_module is None:
+  File "/home/kharmagas/anaconda2/lib/python2.7/site-packages/django/core/urlresolvers.py", line 395, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/home/kharmagas/anaconda2/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "/home/kharmagas/SourceCode/datacomp-internship/datacomp/urls.py", line 3, in <module>
+    from django.urls import path, include, reverse
+ImportError: No module named urls

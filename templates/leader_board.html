@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="no-js" lang="fa" dir="rtl">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>رتبه‌بندی • مسابقه داخلی</title>
+        <meta name="description" content="">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static "css/reservation-v1.0.0.css" %}">
+
+        <script src="{% static "js/ie10-viewport-bug-workaround.js" %}"></script>
+    </head>
+    <body>
+        <div class="topbar row">
+            <div class="columns topbar__title">
+                <a href="{% url "visage:submissions" %}">
+                    <strong>مسابقه داخلی</strong>
+                </a>
+            </div>
+
+            <div class="columns shrink">
+                <a class="topbar-link" href="{% url "visage:submissions" %}" title="مرسولات">
+                    <i class="fa fa-middle"></i>مرسولات
+                </a>
+
+                <a class="topbar-link active" href="{% url "visage:leader_board" %}" title="رتبه‌بندی">
+                    <i class="fa fa-middle"></i>رتبه‌بندی
+                </a>
+
+                <a class="topbar-link" href="{% url "visage:problem" %}" title="سوال">
+                    <i class="fa fa-middle"></i>سوال
+                </a>
+                <a class="topbar-link topbar-logout" href="{% url "authentication:logout" %}" title="خروج از سیستم">
+                    <i class="fa fa-sign-out"></i>
+                    <span>خروج از سیستم</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="row content">
+            <div class="small-12 columns">
+                <nav aria-label="You are here:" role="navigation">
+                    <ul class="breadcrumbs">
+                        <li><a href="{% url "visage:leader_board" %}">رتبه‌بندی</a></li>
+                    </ul>
+                </nav>
+
+                <table class="hover reserve-list">
+                    <thead>
+                    <tr>
+                        <th>رتبه</th>
+                        <th width="375">نام کاربری</th>
+                        <th width="375">خطا</th>
+                        <th width="375">تعداد ارسال</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for submission in submissions %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ submission.username }}</td>
+                            <td>{{ submission.error }}</td>
+                            <td>{{ submission.count }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <script src="{% static "js/jquery.js" %}"></script>
+        <script src="{% static "js/foundation.min.js" %}"></script>
+        <script src="{% static "js/reservation-v1.0.0.js" %}"></script>
+    </body>
+</html>
