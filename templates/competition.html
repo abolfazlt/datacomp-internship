@@ -48,16 +48,31 @@
             <div class="small-12 columns">
                 <nav aria-label="You are here:" role="navigation">
                     <ul class="breadcrumbs">
-                        <li><a href="{% url "visage:problem" %}">سوال</a></li>
+                        <li><a href="{% url "visage:competition" %}">مسابقه</a></li>
                     </ul>
                 </nav>
 
-                <h1>{{ problem.title }}</h1>
-                <p>{{ problem.description|safe }}</p>
-                <a class="topbar-link topbar-logout" href="{% url "visage:download" %}" title="دانلود داده‌های سوال">
-                    <i class="fa fa-download"></i>
-                    <span>دانلود داده‌های سوال</span>
-                </a>
+
+                <table class="hover reserve-list">
+                    <thead>
+                    <tr>
+                        <th>ردیف</th>
+                        <th>مسابقه</th>
+                        <th width="285">Title</th>
+                        <th width="285">Desc</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for competition in competitions %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ competition.title }}</td>
+                            <td>{{ competition.description }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                
                 <p></p>
             </div>
         </div>

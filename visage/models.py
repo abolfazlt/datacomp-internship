@@ -2,6 +2,11 @@ from django.contrib.auth.models import User
 from django.db import models
 
 
+class Competition(models.Model):
+    title = models.CharField(max_length=50, null=False, blank=False, verbose_name='title')
+    description = models.TextField(verbose_name='description')
+
+
 class Problem(models.Model):
     title = models.CharField(max_length=50, null=False, blank=False, verbose_name='title')
     description = models.TextField(verbose_name='description')

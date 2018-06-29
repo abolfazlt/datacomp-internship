@@ -8,7 +8,7 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 
 from authentication.models import Token
-from visage.models import Submission, Problem
+from visage.models import Submission, Problem, Competition
 
 
 @login_required
@@ -31,6 +31,16 @@ def leader_board(request):
             ).values('username', 'error', 'count').filter(error__isnull=False, count__gt=0).order_by('error')
         }
         return render(request, 'leader_board.html', context)
+    else:
+        return HttpResponseBadRequest('Unsupported method!')
+
+
+def competition(request):
+    if request.method == 'GET':
+        context = {
+            'competitions': Competition.objects.order_by('id')
+        }
+        return render(request, 'competition.html', context)
     else:
         return HttpResponseBadRequest('Unsupported method!')
 
