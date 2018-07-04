@@ -47,9 +47,12 @@ def competition(request):
 
 @login_required
 def problem(request):
-    if request.method == 'GET':
+    comp_id = request.GET.get('comp')
+    if request.method == 'GET' and comp_id:
+        competition = Competition.objects.get(pk=comp_id)
         context = {
-            'problem': Problem.objects.order_by('id').last()
+            'problems': Problem.objects.filter(competition=competition),
+            'comp': competition
         }
         return render(request, 'problem.html', context)
     else:

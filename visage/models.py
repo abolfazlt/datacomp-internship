@@ -11,6 +11,7 @@ class Problem(models.Model):
     title = models.CharField(max_length=50, null=False, blank=False, verbose_name='title')
     description = models.TextField(verbose_name='description')
     data = models.FileField(verbose_name='data')
+    competition = models.ForeignKey(Competition, on_delete=models.CASCADE, verbose_name='competition', null=True)
 
 
 class Submission(models.Model):

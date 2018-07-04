@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>رتبه‌بندی • مسابقه داخلی</title>
+        <title>رتبه‌بندی • مسابقات داخلی</title>
         <meta name="description" content="">
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,7 +16,7 @@
         <div class="topbar row">
             <div class="columns topbar__title">
                 <a href="{% url "visage:submissions" %}">
-                    <strong>مسابقه داخلی</strong>
+                    <strong>مسابقات داخلی</strong>
                 </a>
             </div>
 
@@ -29,12 +29,8 @@
                     <i class="fa fa-middle"></i>رتبه‌بندی
                 </a>
 
-                <a class="topbar-link" href="{% url "visage:problem" %}" title="سوال">
-                    <i class="fa fa-middle"></i>سوال
-                </a>
-
-                <a class="topbar-link active" href="{% url "visage:competition" %}" title="مسابقه">
-                    <i class="fa fa-middle"></i>مسابقه
+                <a class="topbar-link active" href="{% url "visage:competition" %}" title="مسابقات">
+                    <i class="fa fa-middle"></i>مسابقات
                 </a>
 
                 <a class="topbar-link topbar-logout" href="{% url "authentication:logout" %}" title="خروج از سیستم">
