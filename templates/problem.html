@@ -29,7 +29,7 @@
                     <i class="fa fa-middle"></i>رتبه‌بندی
                 </a>
 
-                <a class="topbar-link active" href="{% url "visage:competition" %}" title="مسابقات">
+                <a class="topbar-link" href="{% url "visage:competition" %}" title="مسابقات">
                     <i class="fa fa-middle"></i>مسابقات
                 </a>
 
@@ -44,24 +44,21 @@
             <div class="small-12 columns">
                 <nav aria-label="You are here:" role="navigation">
                     <ul class="breadcrumbs">
-                        <li><a href="{% url "visage:problem" %}?comp={{competition.pk}}">مسابقه{{ comp.title }}</a></li>
+                        <li><a href="{% url "visage:problem" %}?comp={{competition.pk}}">مسابقه {{ comp.title }}</a></li>
                     </ul>
                 </nav>
 
-                <h1> مسابقه{{ comp.title }}</h1>
+                <h1>مسابقه {{ comp.title }}</h1>
                 <hr/>
                 {% for problem in problems %}
-                    <tr>
-                        <h3></i>{{ problem.title }} .{{ forloop.counter }}</h3>
-                        <p>{{ problem.description|safe }}</p>
-                    </tr>
-                <br/>
+                    <h3></i>{{ forloop.counter }}. {{ problem.title }} (ID: {{ problem.pk }})</h3>
+                    <p>{{ problem.description|safe }}</p>
+                    <a class="topbar-link topbar-logout" href="{% url "visage:download" %}?problem={{problem.pk}}" title="دانلود داده‌های سوال">
+                        <i class="fa fa-download"></i>
+                        <span>دانلود داده‌های سوال</span>
+                    </a>
+                <br><br>
                 {% endfor %}
-
-                <a class="topbar-link topbar-logout" href="{% url "visage:download" %}" title="دانلود داده‌های سوال">
-                    <i class="fa fa-download"></i>
-                    <span>دانلود داده‌های سوال</span>
-                </a>
                 <p></p>
             </div>
         </div>
