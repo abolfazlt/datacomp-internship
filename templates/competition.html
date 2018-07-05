@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>مسابقه {{ comp.title }} • مسابقات داخلی</title>
+        <title>مسابقات • مسابقات داخلی</title>
         <meta name="description" content="">
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,7 +29,7 @@
                     <i class="fa fa-middle"></i>رتبه‌بندی
                 </a>
 
-                <a class="topbar-link" href="{% url "visage:competition" %}" title="مسابقات">
+                <a class="topbar-link active" href="{% url "visage:competition" %}" title="مسابقات">
                     <i class="fa fa-middle"></i>مسابقات
                 </a>
 
@@ -44,21 +44,31 @@
             <div class="small-12 columns">
                 <nav aria-label="You are here:" role="navigation">
                     <ul class="breadcrumbs">
-                        <li><a href="{% url "visage:problem" %}?comp={{competition.pk}}">مسابقه {{ comp.title }}</a></li>
+                        <li><a href="{% url "visage:competition" %}">مسابقات</a></li>
                     </ul>
                 </nav>
 
-                <h1>مسابقه {{ comp.title }}</h1>
-                <hr/>
-                {% for problem in problems %}
-                    <h3></i>{{ forloop.counter }}. {{ problem.title }} (ID: {{ problem.pk }})</h3>
-                    <p>{{ problem.description|safe }}</p>
-                    <a class="topbar-link topbar-logout" href="{% url "visage:download" %}?problem={{problem.pk}}" title="دانلود داده‌های سوال">
-                        <i class="fa fa-download"></i>
-                        <span>دانلود داده‌های سوال</span>
-                    </a>
-                <br><br>
-                {% endfor %}
+
+                <table class="hover reserve-list">
+                    <thead>
+                    <tr>
+                        <th>ردیف</th>
+                        <th>مسابقه</th>
+                        <th>توضیحات</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for competition in competitions %}
+                        <tr>
+                            <td></i>{{ forloop.counter }}</td>
+                            <td><a class="topbar-link" href="{% url "visage:problem" %}?comp={{competition.pk}}">
+                                {{ competition.title }}</a></td>
+                            <td>{{ competition.description }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                
                 <p></p>
             </div>
         </div>

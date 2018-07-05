@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>مرسولات • مسابقه داخلی</title>
+        <title>مرسولات • مسابقات داخلی</title>
         <meta name="description" content="">
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,7 +16,7 @@
         <div class="topbar row">
             <div class="columns topbar__title">
                 <a href="{% url "visage:submissions" %}">
-                    <strong>مسابقه داخلی</strong>
+                    <strong>مسابقات داخلی</strong>
                 </a>
             </div>
 
@@ -29,9 +29,10 @@
                     <i class="fa fa-middle"></i>رتبه‌بندی
                 </a>
 
-                <a class="topbar-link" href="{% url "visage:problem" %}" title="سوال">
-                    <i class="fa fa-middle"></i>سوال
+                <a class="topbar-link" href="{% url "visage:competition" %}" title="مسابقات">
+                    <i class="fa fa-middle"></i>مسابقات
                 </a>
+
                 <a class="topbar-link topbar-logout" href="{% url "authentication:logout" %}" title="خروج از سیستم">
                     <i class="fa fa-sign-out"></i>
                     <span>خروج از سیستم</span>
@@ -49,7 +50,7 @@
                 <p>
                     نحوه ارسال نتایج:
                     <code>
-                        python3 submit.py [-l] -t TOKEN -f FILE
+                        python3 submit.py [-l] -t TOKEN -f FILE -p PROBLEM_ID
                     </code>
                 </p>
                 <table class="hover reserve-list">
@@ -57,6 +58,7 @@
                     <tr>
                         <th>ردیف</th>
                         <th>سوال</th>
+                        <th>مسابقه‌</th>
                         <th width="285">خطا</th>
                         <th width="285">وضعیت</th>
                         <th width="285">تاریخ</th>
@@ -67,6 +69,8 @@
                         <tr>
                             <td>{{ forloop.counter }}</td>
                             <td>{{ submission.problem.title }}</td>
+                            <td><a class="topbar-link" href="{% url "visage:problem" %}?comp={{submission.problem.competition.pk}}">
+                                {{ submission.problem.competition.title }}</a></td>
                             <td>{% if submission.error == None %}-{% else %}{{ submission.error }}{% endif %}</td>
                             <td>{{ submission.get_status_display }}</td>
                             <td>{{ submission.timestamp }}</td>

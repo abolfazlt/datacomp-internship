@@ -8,7 +8,7 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 
 from authentication.models import Token
-from visage.models import Submission, Problem
+from visage.models import Submission, Problem, Competition
 
 
 @login_required
@@ -35,11 +35,24 @@ def leader_board(request):
         return HttpResponseBadRequest('Unsupported method!')
 
 
-@login_required
-def problem(request):
+def competition(request):
     if request.method == 'GET':
         context = {
-            'problem': Problem.objects.order_by('id').last()
+            'competitions': Competition.objects.order_by('id')
+        }
+        return render(request, 'competition.html', context)
+    else:
+        return HttpResponseBadRequest('Unsupported method!')
+
+
+@login_required
+def problem(request):
+    comp_id = request.GET.get('comp')
+    if request.method == 'GET' and comp_id:
+        competition = Competition.objects.get(pk=comp_id)
+        context = {
+            'problems': Problem.objects.filter(competition=competition),
+            'comp': competition
         }
         return render(request, 'problem.html', context)
     else:
@@ -59,7 +72,7 @@ def submit(request):
                             user=token.user, status__in='SPJ', timestamp__gte=datetime.now().date(), is_final=final
                         ).count()
                         if last_day_subs < 10 - (int(final) * 5):
-                            p = Problem.objects.order_by('id').last()
+                            p = Problem.objects.get(pk=request.POST['problem_id'])
                             Submission.objects.create(
                                 user=token.user, problem=p, file=request.FILES['file'], is_final=final
                             )
@@ -79,7 +92,8 @@ def submit(request):
 
 
 def download(request):
-    if request.method == 'GET':
-        return HttpResponse(Problem.objects.order_by('id').last().data.file.read(), content_type='application/zip')
+    problem_id = request.GET.get('problem')
+    if request.method == 'GET' and problem_id:
+        return HttpResponse(Problem.objects.get(pk=problem_id).data.file.read(), content_type='application/zip')
     else:
         return HttpResponseBadRequest('Unsupported method!')

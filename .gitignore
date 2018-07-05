@@ -1,2 +1,5 @@
 *.sqlite3
 *.sqlite
+/media/*
+media/*
+*.pyc
